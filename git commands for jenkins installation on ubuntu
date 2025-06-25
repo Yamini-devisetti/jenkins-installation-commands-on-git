@@ -1,0 +1,21 @@
+These are the steps for installing the jenkins and java in git bash using ubuntu environment
+
+TO INSTALL JAVA
+sudo apt update
+sudo apt install openjdk-17-jdk -y
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TO INSTALL JENKINS
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TO UPDATE AND INSTALL JENKINS
+sudo apt-get update
+
+sudo apt-get install jenkins
+---------------------------------------------------------------------------------------------------
+TO START JENKINS
+systemctl start jenkins
+---------------------------------------------------------------------------------
+TO CHECK THE STATUS OF JENKINS
+systemctl status jenkins
