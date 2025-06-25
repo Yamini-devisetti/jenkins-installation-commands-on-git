@@ -1,0 +1,38 @@
+commands for installation jenkins on Linux
+
+Jenkins installation steps:
+1. First install java:
+sudo dnf install -y java-17-amazon-corretto
+
+2. Install git:
+yum install -y git
+
+3. Installation of maven from official website:
+
+sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+
+sudo yum install -y apache-maven
+
+4. Installation of jenkins from official website:
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+	(or)
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+sudo amazon-linux-extras install epel -y
+
+yum install jenkins -y
+
+sudo systemctl start jenkins
+
+sudo systemctl status jenkins
+
+cat /var/lib/jenkins/secrets/initialAdminPassword
+
+service jenkins start
+
+cat /var/lib/jenkins/secrets/initialAdminPassword
